@@ -12,7 +12,7 @@ public class Solution {
 		for (int t = 1; t <= T; t++) {
 			int N = sc.nextInt(), M = sc.nextInt(), K = sc.nextInt();
 			int bun = 0;
-			boolean flag = true;
+			String flagStr = "P";
 			int[] arr = new int[N];
 			for (int i = 0; i < N; i++) {
 				arr[i] = sc.nextInt();
@@ -22,14 +22,11 @@ public class Solution {
 				int sec = arr[i];
 				bun = ((Integer) (sec / M)) * K - i;
 				if (bun < 1) {
-					flag = false;
+					flagStr = "Imp";
 					break;
 				}				
 			}
 			
-			String flagStr = "";
-			if (flag) flagStr = "P";
-			else flagStr = "Imp";
 			String ans = "ossible";
 			System.out.println(String.format("#%d %s%s", t, flagStr , ans));
 		}
